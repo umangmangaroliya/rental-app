@@ -11,6 +11,8 @@ import bookingRoutes from "./routes/bookingRoutes";
 import branchRoutes from "./routes/branchRoutes";
 import productRoutes from "./routes/productRoutes";
 import userRoutes from "./routes/userRoutes";
+import chatRoutes from "./routes/chatRoutes";
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -26,6 +28,8 @@ app.use("/api/branches", branchRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/bookings", bookingRoutes);
+app.use("/api/chat", chatRoutes);
+
 
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok", message: "API is running" });
